@@ -70,7 +70,7 @@ public class NewTree {
 		int i=0;
 		while(children.size()>i){
 			Node temp=children.get(i);
-			if(temp.getKey()==key){System.out.println("Ã£Àº ³»¿ë: "+temp.getData()); return temp;}
+			if(temp.getKey()==key){System.out.println("ÃƒÂ£Ã€Âº Â³Â»Â¿Ã«: "+temp.getData()); return temp;}
 			else i++;
 		}
 		return null;
