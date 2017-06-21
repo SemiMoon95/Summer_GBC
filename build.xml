@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="tree" default="compile" basedir=".">
+	<property name="classes.dir" value="classes"/>
+	<property name="src.dir" value="src"/>
+
+	<target name="compile">
+		<mkdir dir="${classes.dir}"/>
+		<javac includeantruntime="false"
+		 srcdir="${src.dir}" destdir="${classes.dir}"/>
+	</target>
+</project>
