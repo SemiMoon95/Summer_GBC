@@ -1,11 +1,29 @@
 <?xml version="1.0"?>
-<project name="tree" default="compile" basedir=".">
+<project name="tree" default="compile">
 	<property name="classes.dir" value="classes"/>
 	<property name="src.dir" value="src"/>
+	<property name="tree.dir" value="${src.dir}/tree"/>
+	<property name="jar.dir" value="jar"/>
 
 	<target name="compile">
 		<mkdir dir="${classes.dir}"/>
 		<javac includeantruntime="false"
-		 srcdir="${src.dir}" destdir="${classes.dir}"/>
+		 srcdir="${src.dir}"
+		 destdir="${classes.dir}"/>
 	</target>
+	
+	<target name="jar">
+		<mkdir dir="${jar.dir}"/>
+		<jar destfile="${jar.dir}/tree.jar" 
+		basedir="${classes.dir}">
+		<manifest>
+			<attribute name="Main-Class" value="tree.Main"/>
+		</manifest>
+		</jar>
+	</target>
+
+	<target name="run">
+		<java jar="jar/tree.jar" fork="true"/>
+	</target>
+
 </project>
